@@ -19,12 +19,6 @@ cyber-defenders/
 
 Each lab has its own directory containing its documentation and supporting evidence. As I complete more labs, I will add new directories using the same structure.
 
-### Labs
-
-| Lab | Description | Documentation |
-|---|---|---|
-| XML-RAT Lab | Investigation and documentation of XML-RAT in a controlled lab environment. | [View Lab](xmlrat-lab/xmlrat-lab.md) |
-
 ### Skills Development
 
 Through these labs, I aim to develop and strengthen skills in:
