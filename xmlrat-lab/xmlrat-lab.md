@@ -16,13 +16,11 @@ The investigation covered the following areas:
 
 ---
 
-# Initial Malware Download
-
-## Investigation
+## Initial Malware Download
 
 The HTTP traffic and reconstructed PowerShell command were examined to identify the URL used to download the first malware stage.
 
-![1st-STAGE](images/first-stage)
+![1st-STAGE](images/first-stage.png)
 
 ### Finding 1: Obfuscated Download Command
 
@@ -56,7 +54,7 @@ The first stage was retrieved from the URL shown above.
 
 ---
 
-# Hosting Infrastructure
+## Hosting Infrastructure
 
 An IP WHOIS lookup was used to identify the hosting provider associated with the server IP.
 
@@ -73,7 +71,7 @@ The WHOIS lookup associated the IP address with ReliableSite.net.
 
 ---
 
-# Malware Payload Analysis
+## Malware Payload Analysis
 
 The malicious scripts contained byte-array data representing payloads. The extracted bytes were converted from hexadecimal and hashed to identify the malware executable.
 
@@ -95,9 +93,9 @@ $Fu = [Reflection.Assembly]::$HM($pe)
 
 ### Finding 2: Executable SHA256
 
-![SHA256](images/sha256.png)
-
 The hexadecimal payload string was processed in CyberChef by replacing underscores with empty strings, converting from hexadecimal, and calculating the SHA256 hash.
+
+![SHA256](images/sha256.png)
 
 | Artifact | Value |
 | -------- | ----- |
@@ -122,7 +120,7 @@ The PE header compile timestamp recorded during the investigation was `2023-10-3
 
 ---
 
-# Stealthy Process Execution
+## Stealthy Process Execution
 
 The script reconstructed a Windows .NET Framework executable path by removing obfuscation characters from string fragments.
 
@@ -149,7 +147,7 @@ Removing the `#` characters from the path fragments reconstructs the executable 
 
 ---
 
-# Dropped Files
+## Dropped Files
 
 The script was designed to drop multiple files on the compromised system.
 
@@ -165,7 +163,7 @@ The three filenames identified in the investigation notes were `conted.ps1`, `co
 
 ---
 
-# Key Findings
+## Key Findings
 
 | Investigation Area | Finding |
 | ------------------ | ------- |
@@ -181,7 +179,7 @@ The three filenames identified in the investigation notes were `conted.ps1`, `co
 
 ---
 
-# Skills Demonstrated
+## Skills Demonstrated
 
 - PCAP Analysis
 - HTTP Traffic Investigation
